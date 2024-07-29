@@ -274,6 +274,24 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+    <!-- Contact Javascript -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the default form submission
+        
+          // Get form values
+          var name = document.querySelector('input[type="text"]').value;
+          var email = document.querySelector('input[type="email"]').value;
+          var message = document.querySelector('textarea').value;
+        
+          // Construct the mailto link
+          var mailtoLink = `mailto:?subject=Contact Form Submission&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+        
+          // Open the mailto link
+          window.location.href = mailtoLink;
+        });
+        </script>
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     </body>
